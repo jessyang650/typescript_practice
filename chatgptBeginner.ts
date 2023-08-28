@@ -20,13 +20,13 @@ string as input and returns the string in reverse order.
 For example, if the input is "hello", the function should return "olleh".
 */
 
-const reverseOrder = (input: string): string => {
-    let reversed = ''
-    for (let i = input.length - 1; i >= 0; i--) {
-        reversed += input[i]
-    }
-    return reversed
-}
+// const reverseOrder = (input: string): string => {
+//     let reversed = ''
+//     for (let i = input.length - 1; i >= 0; i--) {
+//         reversed += input[i]
+//     }
+//     return reversed
+// }
 
 
 /*
@@ -98,4 +98,43 @@ const replaceVowels2 = (input: string): string => {
         }
     }
     return newString
+}
+
+
+/*
+Question: Write a TypeScript function that takes an array of strings as 
+input and returns a new array containing only the strings that start with 
+a vowel (case-insensitive). For example, if the input array is 
+["apple", "Banana", "orange", "kiwi"], the function should return ["apple", "orange"].
+*/
+
+const returnStartWithVowel = (input: string[]): string[] => {
+    let startsWithVowel: string[] = []
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    for (let i = 0; i <= input.length - 1; i++) {
+        if (vowels.includes(input[i][0])) {
+            startsWithVowel.push(input[i])
+        }
+    }
+    return startsWithVowel
+}
+
+
+/*
+Question: Write a TypeScript function that takes a string as input and returns 
+the same string with all its words reversed. A word is defined as a sequence of 
+non-space characters. For example, if the input is "Hello world, how are you?", the 
+function should return "olleH ,dlrow woh era ?uoy".
+*/
+
+const reverseWords = (input: string): string => {
+    const words = input.split(' ')
+    let reversed = ''
+    for (let i = 0; i <= words.length - 1; i++) {
+        for (let j = words[i].length - 1; j >= 0; j--) {
+            reversed += words[i][j]
+        }
+        reversed += ' '
+    }
+    return reversed
 }
