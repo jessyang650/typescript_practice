@@ -213,3 +213,57 @@ const findMax = (input: number[]): number => {
     })
     return max
 }
+
+/* Problem Statement:
+You are given a string containing a sentence. Your task is to implement a function that 
+counts the number of words in the sentence. A word is defined as a sequence of characters 
+separated by spaces. Write a TypeScript function called countWords that takes a string as 
+input and returns the number of words in the sentence.
+*/
+
+const countWords = (input: string): number => {
+    const count = input.split(' ')
+    return count.length
+}
+
+/* Problem Statement:
+You are given a sorted array of integers. Your task is to implement a function that searches 
+for a target integer in the array using binary search. If the target integer is found, return 
+its index; otherwise, return -1. Write a TypeScript function called binarySearch that takes 
+a sorted array of integers and a target integer as input and returns the index of the target 
+integer in the array or -1 if it's not found.
+*/
+
+const binarySearch = (input: number[]): number => {
+    let start = 0
+    let end = input.length - 1
+    while (start <= end) {
+        const mid = Math.floor((start + end) / 2)
+        if (input[mid] === target) {
+            return mid
+        } else if (input[mid] < target) {
+            start = mid + 1
+        } else {
+            end = mid - 1
+        }
+    }
+    return -1
+}
+
+/* Problem Statement:
+You are given an array of integers. Your task is to implement a function that 
+finds and returns the index of the first occurrence of a specific target integer 
+in the array. If the target integer is not found, return -1. Write a TypeScript function 
+called findFirstOccurrence that takes an array of integers and a target integer 
+as input and returns the index of the first occurrence of the target integer in the 
+array or -1 if it's not found.
+*/
+
+const findFirstOccurrence = (input: number[], target: number): number => {
+    for (let i = 0; i <= input.length - 1; i++) {
+        if (input[i] === target) {
+            return i
+        }
+    }
+    return -1
+}
