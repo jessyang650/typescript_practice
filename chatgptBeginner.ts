@@ -138,3 +138,42 @@ const reverseWords = (input: string): string => {
     }
     return reversed
 }
+
+
+/*
+Question: Write a TypeScript function that takes a number as input and returns true 
+if the number is a prime number, and false otherwise. A prime number is a positive integer 
+greater than 1 that has no positive divisors other than 1 and itself. For example, if the 
+input is 7, the function should return true, and if the input is 10, the function 
+should return false.
+*/
+
+const isPrime = (input: number): boolean => {
+    if (input < 2) {
+        return false
+    }
+    for (let i = 2; i < input; i++) {
+        if (input % i === 0) {
+            return false
+        }
+    }
+    return true
+}
+
+/*
+Problem Statement:
+You are given an array of integers, and your task is to implement a function that 
+returns the sum of all the even numbers in the array. Write a TypeScript function 
+called sumOfEvenNumbers that takes an array of integers as input and returns the 
+sum of all the even numbers in the array.
+*/
+
+const sumOfEvenNumbers = (input: number[]): number => {
+    let sum = 0
+    input.forEach(element => {
+      if (element % 2 === 0) {
+        sum += element
+      }  
+    })
+    return sum
+}
