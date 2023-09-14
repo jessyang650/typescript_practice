@@ -177,3 +177,39 @@ const sumOfEvenNumbers = (input: number[]): number => {
     })
     return sum
 }
+
+/*
+Problem Statement:
+You are given a string containing a list of numbers separated by commas. Your task is 
+to implement a function that calculates the sum of these numbers. Write a TypeScript function 
+called calculateSum that takes a string of comma-separated numbers as input and returns their 
+sum as a number.
+*/
+
+const calculateSum = (input: string) => {
+    const numbers = input.split(',') // numbers is an array of strings
+    let sum = 0
+    numbers.forEach(element => {
+      sum += parseInt(element)
+    })
+    return sum
+}
+
+/* Problem Statement:
+You are given an array of numbers. Your task is to implement a function that finds and 
+returns the maximum number in the array. Write a TypeScript function called findMax that 
+takes an array of numbers as input and returns the maximum number in the array.
+*/
+
+const findMax = (input: number[]): number => {
+    if (input.length === 0) {
+        throw new Error('Input array is empty')
+    }
+    let max = input[0]
+    input.forEach(e => {
+        if (e > max) {
+            max = e
+        }
+    })
+    return max
+}
